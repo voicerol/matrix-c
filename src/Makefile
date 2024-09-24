@@ -1,14 +1,7 @@
 .PHONY: all clean test gcov_report style valgrind
 CC = gcc -Wall -Wextra -Werror -std=c11
 GCOVFLAGS = -L. --coverage
-
-OS = $(shell uname)
-
-ifeq ($(OS), Linux)
-    FLAGS = -lcheck -pthread -lrt -lm -lsubunit
-else
-    FLAGS = -lcheck
-endif
+FLAGS = -lcheck -pthread -lrt -lm -lsubunit
 
 OBJDIR = objects
 ACTIONSDIR = functions
